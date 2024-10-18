@@ -48,7 +48,7 @@ solana-test-validator
 
 ### 5. Build and deploy the program
 
-**Note:** change program name in [program/Cargo.toml](program/Cargo.toml) and [js/.solitarc.js](js/.solitarc.js) before deploymentx
+**Note:** change program name in [program/Cargo.toml](program/Cargo.toml) and [js/.solitarc.js](js/.solitarc.js) before deployment
 
 ```bash
 bash ./cicd.sh
