@@ -1,0 +1,25 @@
+{
+  "name": "program-name",
+  "module": "index.ts",
+  "type": "commonjs",
+  "scripts": {
+    "test": "bun test --timeout 100000"
+  },
+  "devDependencies": {
+    "@metaplex-foundation/beet-solana": "^0.4.1",
+    "@metaplex-foundation/solita": "^0.20.1",
+    "@types/bun": "latest",
+    "@types/jest": "^29.5.13",
+    "mocha": "^10.7.3",
+    "ts-mocha": "^10.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.2"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@solana/web3.js": "^1.95.3",
+    "@types/mocha": "^10.0.9"
+  }
+}

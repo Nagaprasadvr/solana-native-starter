@@ -1,0 +1,182 @@
+{
+  "version": "0.1.0",
+  "name": "solana_demo",
+  "instructions": [
+    {
+      "name": "CreateAccount",
+      "accounts": [
+        {
+          "name": "feePayerAcc",
+          "isMut": true,
+          "isSigner": true,
+          "docs": [
+            "Fee payer account"
+          ]
+        },
+        {
+          "name": "newAcc",
+          "isMut": true,
+          "isSigner": true,
+          "docs": [
+            "New account"
+          ]
+        },
+        {
+          "name": "systemProgramAcc",
+          "isMut": false,
+          "isSigner": false,
+          "docs": [
+            "System program account"
+          ]
+        }
+      ],
+      "args": [
+        {
+          "name": "createMyAccountIx",
+          "type": {
+            "defined": "CreateMyAccountIx"
+          }
+        }
+      ],
+      "discriminant": {
+        "type": "u8",
+        "value": 0
+      }
+    },
+    {
+      "name": "CreatePDAAccount",
+      "accounts": [
+        {
+          "name": "feePayerAcc",
+          "isMut": true,
+          "isSigner": true,
+          "docs": [
+            "Fee payer account"
+          ]
+        },
+        {
+          "name": "newPdaAcc",
+          "isMut": true,
+          "isSigner": false,
+          "docs": [
+            "New PDA account"
+          ]
+        },
+        {
+          "name": "systemProgramAcc",
+          "isMut": false,
+          "isSigner": false,
+          "docs": [
+            "System program account"
+          ]
+        }
+      ],
+      "args": [
+        {
+          "name": "createMyPdaAccountIx",
+          "type": {
+            "defined": "CreateMyPdaAccountIx"
+          }
+        }
+      ],
+      "discriminant": {
+        "type": "u8",
+        "value": 1
+      }
+    }
+  ],
+  "accounts": [
+    {
+      "name": "MyAccount",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "data",
+            "type": {
+              "array": [
+                "u8",
+                32
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "MyPdaAccount",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "data",
+            "type": {
+              "array": [
+                "u8",
+                32
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "types": [
+    {
+      "name": "CreateMyAccountIx",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "data",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "name": "CreateMyPdaAccountIx",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "data",
+            "type": "string"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    }
+  ],
+  "errors": [
+    {
+      "code": 0,
+      "name": "InvalidInstruction",
+      "msg": "Invalid Instruction (this ix is not supported)"
+    },
+    {
+      "code": 1,
+      "name": "SerializeError",
+      "msg": "Serialize error"
+    },
+    {
+      "code": 2,
+      "name": "PdaPubekyMismatch",
+      "msg": "PDA Pubkey Mismatch"
+    },
+    {
+      "code": 3,
+      "name": "SizeOverflow",
+      "msg": "Size overflow"
+    }
+  ],
+  "metadata": {
+    "origin": "shank",
+    "address": "HHVuxvnj7X1KjCAp4iWBzLmTtYRhXHu1njK4x8eAsRRo",
+    "binaryVersion": "0.4.2",
+    "libVersion": "0.4.2"
+  }
+}
