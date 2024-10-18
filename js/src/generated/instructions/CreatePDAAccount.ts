@@ -67,7 +67,7 @@ export const createPDAAccountInstructionDiscriminator = 1
 export function createCreatePDAAccountInstruction(
   accounts: CreatePDAAccountInstructionAccounts,
   args: CreatePDAAccountInstructionArgs,
-  programId = new web3.PublicKey('HHVuxvnj7X1KjCAp4iWBzLmTtYRhXHu1njK4x8eAsRRo')
+  programId = new web3.PublicKey('EU3kA8Nf2ketyJNp4cjUuRtCW4Lbt8Ap3kuokE5FxaoS')
 ) {
   const [data] = CreatePDAAccountStruct.serialize({
     instructionDiscriminator: createPDAAccountInstructionDiscriminator,

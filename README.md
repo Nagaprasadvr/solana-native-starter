@@ -1,54 +1,70 @@
-Solana Native Starter
+# Solana Native Starter
 
-This is a starter project for Solana programs written in Rust
+### This is a solana native starter project with batteries included
 
-## Steps to start
+## Steps to start (Please use wsl or linux for smooth devux)
 
-# 1. clone the repo
+### 1. clone the repo
 
 ```bash
-git clone https://github.com/Nagaprasadvr/solana-native-starter.git
+git clone git@github.com:Nagaprasadvr/solana-native-starter.git
 ```
 
-# 2. Directory structure
+### 2. Directory structure
 
-program/ - contains the rust program
+- [program/](program/) - contains the rust program
 
 - [src/](program/src/)
+
   - [entrypoint.rs](program/src/entrypoint.rs) - the entrypoint of the program
-  - [lib.rs](program/src/lib.rs) - solana program crate
+  - [lib.rs](program/src/lib.rs) - solana program lib crate
   - [instruction.rs](program/src/instruction.rs) - all instructions are defined here
+
+    **Note:** instructions are annotated with `#[accounts(...)]` `shank macros` which are required to generate client code
+
   - [state.rs](program/src/state.rs) - all account states are defined here
+
+    **Note:** state is deriving `ShankAccount` which is required to generate client code
+
   - [processor.rs](program/src/processor.rs) - the processor file
-  - [error.rs](program/src/error.rs) - the error
+  - [error.rs](program/src/error.rs) - program errors are listed here
+  - [helper.rs](program/src/helpers.rs) - helpers and constants for program
 
-js/ - contains the js client
+- [js/](js/) - contains the js `client`
 
-- [js/tests/](js/tests/) - contains the tests for the program
+- [js/tests/](js/tests/) - contains the `tests` for the program
 
-# 3. Build and deploy the program
+### 3. Setup
 
 ```bash
-sudo chmod +rwx cicd.sh  (for first time)
-./cicd.sh
+sudo chmod +rwx cicd.sh && sudo chmod +rwx gen-client.sh #for first time to provide permissions
 ```
 
-dont forget to replace program id after program deployment in `prorgam/src/entrypoint.rs`
-
-# 4. Generate the client
+### 4. Run the solana test validator for deployment and testing
 
 ```bash
-sudo chmod +rwx ./gen-client.sh (for first time)
-./gen-client.sh
+solana-test-validator
+```
 
+### 5. Build and deploy the program
+
+```bash
+bash ./cicd.sh
+```
+
+dont forget to replace program id after program deployment in [prorgam/src/lib.rs](program/src//lib.rs)
+
+### 6. Generate the client
+
+```bash
+bash ./gen-client.sh
 ```
 
 The generated client code is located in
 [js/src/generated](js/src/generated/)
 
-# 5. Running Tests
+### 7. Running Tests
 
 ```bash
 cd js && bun run test
-
 ```

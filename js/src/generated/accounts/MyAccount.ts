@@ -74,7 +74,7 @@ export class MyAccount implements MyAccountArgs {
    */
   static gpaBuilder(
     programId: web3.PublicKey = new web3.PublicKey(
-      'HHVuxvnj7X1KjCAp4iWBzLmTtYRhXHu1njK4x8eAsRRo'
+      'EU3kA8Nf2ketyJNp4cjUuRtCW4Lbt8Ap3kuokE5FxaoS'
     )
   ) {
     return beetSolana.GpaBuilder.fromStruct(programId, myAccountBeet)

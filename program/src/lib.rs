@@ -8,4 +8,4 @@ pub mod state;
 mod entrypoint;
 
 // change the program id after deploying the program
-solana_program::declare_id!("HHVuxvnj7X1KjCAp4iWBzLmTtYRhXHu1njK4x8eAsRRo");
+solana_program::declare_id!("EU3kA8Nf2ketyJNp4cjUuRtCW4Lbt8Ap3kuokE5FxaoS");
